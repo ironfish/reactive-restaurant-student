@@ -9,7 +9,7 @@ import scala.concurrent.duration.FiniteDuration
 
 object Guest {
 
-  case object CaffeineException extends IllegalStateException("Too much caffeine!")
+  case object FoodException extends IllegalStateException("Too much food!")
   case object FoodFinished
 
   def props(waiter: ActorRef, favoriteFood: Food, finishFoodDuration: FiniteDuration, foodLimit: Int): Props =
@@ -32,7 +32,7 @@ class Guest(waiter: ActorRef, favoriteFood: Food, finishFoodDuration: FiniteDura
       log.info("Enjoying my {} yummy {}!", foodCount, food)
       context.system.scheduler.scheduleOnce(finishFoodDuration, self, FoodFinished)
     case FoodFinished if foodCount > foodLimit =>
-      throw CaffeineException
+      throw FoodException
     case FoodFinished =>
       orderFavoriteFood()
   }
@@ -43,4 +43,3 @@ class Guest(waiter: ActorRef, favoriteFood: Food, finishFoodDuration: FiniteDura
   private def orderFavoriteFood(): Unit =
     waiter ! Waiter.ServeFood(favoriteFood)
 }
-

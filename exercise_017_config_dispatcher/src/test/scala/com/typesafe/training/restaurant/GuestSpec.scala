@@ -39,9 +39,9 @@ class GuestSpec extends BaseAkkaSpec {
       guest ! Guest.FoodFinished
       waiter.expectMsg(Waiter.ServeFood(Food.Akkacore))
     }
-    "result in a CaffeineException if foodLimit exceeded" in {
+    "result in a FoodException if foodLimit exceeded" in {
       val guest = system.actorOf(Guest.props(system.deadLetters, Food.Akkacore, 100 millis, -1))
-      EventFilter[Guest.CaffeineException.type](occurrences = 1) intercept {
+      EventFilter[Guest.FoodException.type](occurrences = 1) intercept {
         guest ! Guest.FoodFinished
       }
     }

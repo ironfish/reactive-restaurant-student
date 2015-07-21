@@ -16,8 +16,8 @@ In this exercise, we will explore resilience by managing a faulty actor.
 
 1. Change `Guest` as follows:
     - Add a `foodLimit` parameter.
-    - Add the `CaffeineException` case object extending `IllegalStateException` to the companion object.
-    - Upon receiving `FoodFinished` throw the `CaffeineException` if `foodCount` exceeds `foodLimit`.
+    - Add the `FoodException` case object extending `IllegalStateException` to the companion object.
+    - Upon receiving `FoodFinished` throw the `FoodException` if `foodCount` exceeds `foodLimit`.
 2. Change `Restaurant` as follows:
     - So that a `Guest` can be created with a `foodLimit`.
     - Log the `Guest` path name instead of just the `Guest`.

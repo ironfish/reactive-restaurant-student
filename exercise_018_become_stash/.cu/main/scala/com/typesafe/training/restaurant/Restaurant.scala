@@ -23,7 +23,7 @@ class Restaurant(foodLimit: Int) extends Actor with ActorLogging {
 
   override val supervisorStrategy: SupervisorStrategy = {
     val decider: SupervisorStrategy.Decider = {
-      case Guest.CaffeineException =>
+      case Guest.FoodException =>
         SupervisorStrategy.Stop
       case Waiter.FrustratedException(food, guest) =>
         chef.tell(Chef.PrepareFood(food, guest), sender())
