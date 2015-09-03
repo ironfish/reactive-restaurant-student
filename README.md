@@ -79,8 +79,7 @@ To go to the previous exercise, run the `prev` command.
 
 #### Front
 
-If you get stuck an any of the exercises, you can run the `front` command which overwrites your current exercises work with the
-solution. Dont cheat! Try to complete the exercise first.
+If you get stuck on any of the exercises, you can run the `front` command which overwrites your current  work with the solution. Dont cheat! Try to complete the exercise first.
 
 `[run the man command] [001] some_exercise > front`
 
