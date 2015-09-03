@@ -3,7 +3,7 @@
 
 ## Reactive Restaurant
 
-Welcome to the Reactive Restaurant. Here you will delight in one of three fine seafoods: `Akkacore`, `MahiPlay` and `KingScala` and learn the basics of Reactive Progamming along the way. To achieve this, you will work through the series of exercises organized by topic as laid out in the Introduction to Reactive Programming slide deck.
+Welcome to the Reactive Restaurant. Here you will delight in one of three fine seafoods: `Akkacore`, `MahiPlay` and `KingScala` and learn the basics of Reactive Progamming along the way. To achieve this, you will work through the series of exercises organized by topic as laid out in the Introduction to [Reactive Programming slide deck](introduction_to_reactive_programming.pdf).
 
 ## Prerequisites
 
@@ -76,6 +76,13 @@ As part of each exercise, you will run the `run` command to bootstrap the main c
 To go to the previous exercise, run the `prev` command.
 
 `[run the man command] [001] some_exercise > prev`
+
+#### Front
+
+If you get stuck an any of the exercises, you can run the `front` command which overwrites your current exercises work with the
+solution. Dont cheat! Try to complete the exercise first.
+
+`[run the man command] [001] some_exercise > front`
 
 ### Eclipse (Only if your IDE is Eclipse based)
 
