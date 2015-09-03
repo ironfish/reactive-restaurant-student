@@ -1,6 +1,8 @@
 
 # Introduction to Reactive Progamming
 
+[oscon Portland, 2015](http://www.oscon.com/open-source-2015/public/schedule/speaker/205844)
+
 ## Reactive Restaurant
 
 Welcome to the Reactive Restaurant. Here you will delight in one of three fine seafoods: `Akkacore`, `MahiPlay` and `KingScala` and learn the basics of Reactive Progamming along the way. To achieve this, you will work through the series of exercises organized by topic as laid out in the Introduction to [Reactive Programming slide deck](introduction_to_reactive_programming.pdf).
