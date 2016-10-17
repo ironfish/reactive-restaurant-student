@@ -1,8 +1,8 @@
-val akkaVer = "2.3.11"
-val logbackVer = "1.1.2"
-val scalaVer = "2.11.7"
+val akkaVer = "2.4.11"
+val logbackVer = "1.1.7"
+val scalaVer = "2.11.8"
 val scalaParsersVer= "1.0.4"
-val scalaTestVer = "2.2.4"
+val scalaTestVer = "3.0.0"
 
 lazy val compileOptions = Seq(
   "-unchecked",

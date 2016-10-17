@@ -8,6 +8,8 @@ import akka.actor.{ Actor, ActorLogging, ActorRef, ActorSystem, Props }
 import akka.event.Logging
 import scala.annotation.tailrec
 import scala.collection.breakOut
+import scala.concurrent.Await
+import scala.concurrent.duration.Duration
 import scala.io.StdIn
 
 object RestaurantApp {
@@ -48,7 +50,7 @@ class RestaurantApp(system: ActorSystem) extends Terminal {
   def run(): Unit = {
     log.warning(f"{} running%nEnter commands into the terminal, e.g. `q` or `quit`", getClass.getSimpleName)
     commandLoop()
-    system.awaitTermination()
+    Await.ready(system.whenTerminated, Duration.Inf)
   }
 
   protected def createRestaurant(): ActorRef =
@@ -64,7 +66,7 @@ class RestaurantApp(system: ActorSystem) extends Terminal {
         status()
         commandLoop()
       case Command.Quit =>
-        system.shutdown()
+        system.terminate()
       case Command.Unknown(command) =>
         log.warning("Unknown command {}!", command)
         commandLoop()
